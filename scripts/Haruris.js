@@ -1,6 +1,8 @@
 class Haruris {
 	static get rootId () { return "Haruris" };
 
+	
+
 	constructor () {
 		this.cvs = new DOM("Canvas", { id: Haruris.rootId });
 		this.cvsSize = Math.min(DOM.width, DOM.height);
