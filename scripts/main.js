@@ -1,1 +1,1 @@
-new Haruris
+const app = new Haruris();
