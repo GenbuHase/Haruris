@@ -1,22 +1,20 @@
 class Haruris {
 	static get rootId () { return "Haruris" };
 
-	
+
 
 	constructor () {
-		this.cvs = new DOM("Canvas", { id: Haruris.rootId });
-		this.cvsSize = Math.min(DOM.width, DOM.height);
+		let rootSize = this.rootSize = Math.min(DOM.width, DOM.height);
 
-		document.body.appendChild(this.cvs);
-	}
+		let root = this.root = new DOM("Canvas", {
+			id: Haruris.rootId,
 
-	get cvsSize () { return this.cvs.getAttribute("Width") || this.cvs.getAttribute("Height") }
-	set cvsSize (size = 0) {
-		this.cvs.applyProperties({
 			attributes: {
-				Width: size,
-				height: size
+				Width: rootSize,
+				Height: rootSize
 			}
-		});
+		});	document.body.appendChild(root);
+
+		let ctx = this.ctx = root.getContext("2d");
 	}
 }
